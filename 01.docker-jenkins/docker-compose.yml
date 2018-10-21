@@ -1,0 +1,20 @@
+#参考：https://jenkins.io/doc/book/installing/
+version: "3"
+services:
+    jenkins_master:
+        container_name: jenkins_container_master
+        image: jenkinsci/blueocean
+        user: root
+        ports: 
+            - 8080:8080
+            - 50000:50000
+        volumes:
+            - ./jenkins_home:/var/jenkins_home
+            - /var/run/docker.sock:/var/run/docker.sock
+        links:
+            - slave01
+    slave01:
+        container_name: slave01
+        image: jenkinsci/ssh-slave
+        environment:
+            - JENKINS_SLAVE_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC83DoCmocwwNqzXcWejg8PuTEHRLcsqO+Tra5vkkSKiUpuQOQ3t8k027xNvNQhhRcH4nEvNEX7qtgffr+jjjVSQowlztpztnMaiFwiRe6SkAnXYnzfKVVQtylFmz/OTwN1aFAZsNuAX2lJDBpoUPx7MhZ4YNAEHHsjRpfjZo3z7h8v21OKN58p4ZoyjbzmjYuj7m/K/bGrkUCNH0G4iVkj+rWwfdQ01R/5U8/NKbNgyzVfmWkDbhHuSor52eRGAIl/H+qBVs4o6QTNWCi8PGElvoWK/c6SFEmYevDsYA3fFOzgAZELtQzLtidYhdaOlFmndU7dW1ELpSkIrxjmVQvP

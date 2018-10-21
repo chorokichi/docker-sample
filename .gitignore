@@ -1,0 +1,6 @@
+// jenkins_homeはフォルダー自体と.sshフォルダー自体はレポジトリーに登録するようにしている
+01.docker-jenkins/jenkins_home/*
+!01.docker-jenkins/jenkins_home/.gitkeep
+!01.docker-jenkins/jenkins_home/.ssh
+01.docker-jenkins/jenkins_home/.ssh/*
+!01.docker-jenkins/jenkins_home/.ssh/.gitkeep
