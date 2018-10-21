@@ -4,3 +4,4 @@
 !01.docker-jenkins/jenkins_home/.ssh
 01.docker-jenkins/jenkins_home/.ssh/*
 !01.docker-jenkins/jenkins_home/.ssh/.gitkeep
+03.docker-swarm-sample/registry-data
