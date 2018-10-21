@@ -1,0 +1,10 @@
+#参考：https://jenkins.io/doc/book/installing/
+version: "3"
+services:
+    my-echo:
+        container_name: my-echo
+        build: "."
+        image: example/echo:latest
+        ports: 
+            - 9001:8080
+ 
